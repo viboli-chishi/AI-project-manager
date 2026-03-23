@@ -1,0 +1,91 @@
+.section {
+  margin-bottom: var(--space-xl);
+}
+
+.headerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-lg);
+}
+
+.sectionTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.arrowBtn {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-size: 18px;
+  display: flex; align-items: center; justify-content: center;
+  transition: background var(--transition-fast);
+}
+.arrowBtn:hover:not(:disabled) { background: var(--accent-purple); }
+.arrowBtn:disabled { opacity: 0.3; cursor: default; }
+
+.counter {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  min-width: 36px;
+  text-align: center;
+}
+
+.track {
+  overflow: hidden;
+  cursor: grab;
+  user-select: none;
+  padding: 24px 0;
+}
+
+.track:active { cursor: grabbing; }
+
+.inner {
+  display: flex;
+  gap: var(--space-lg);
+  /* Shift carousel so active card is centred */
+  transform: translateX(calc(50vw - 280px / 2 - (var(--offset) * (280px + 24px)) - 32px));
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.slide {
+  flex-shrink: 0;
+  transition: transform var(--transition-normal), opacity var(--transition-normal);
+}
+
+.empty {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 14px;
+  padding: var(--space-xl) 0;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: var(--space-md);
+}
+
+.dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  transition: all var(--transition-fast);
+}
+
+.dotActive {
+  background: var(--accent-purple);
+  width: 22px;
+  border-radius: var(--radius-pill);
+}

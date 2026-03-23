@@ -1,0 +1,23 @@
+.shell {
+  min-height: 100vh;
+  background: var(--bg-shell);
+  position: relative;
+}
+
+.main {
+  padding-top: var(--nav-height);
+  position: relative;
+  z-index: 1;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-xl);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: var(--space-lg) var(--space-md);
+  }
+}

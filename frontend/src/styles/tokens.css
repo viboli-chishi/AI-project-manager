@@ -1,0 +1,61 @@
+/* ============================================================
+   DESIGN TOKENS — Messor-style dark dashboard
+   ============================================================ */
+
+:root {
+  /* Backgrounds */
+  --bg-shell:      #f0f0f4;
+  --bg-primary:    #1a1a2e;
+  --bg-card:       #242438;
+  --bg-card-hover: #2a2a45;
+  --bg-nav:        #1a1a2e;
+
+  /* Accents */
+  --accent-green:  #1dc98a;
+  --accent-purple: #b47afc;
+  --accent-yellow: #f4b942;
+  --accent-pink:   #f06292;
+  --accent-blue:   #64b5f6;
+  --accent-red:    #ef5350;
+
+  /* Text */
+  --text-primary:   #ffffff;
+  --text-secondary: #a0a0c0;
+  --text-muted:     #606080;
+  --text-dark:      #1a1a2e;
+
+  /* Borders */
+  --border-subtle:  rgba(255, 255, 255, 0.06);
+  --border-card:    rgba(255, 255, 255, 0.08);
+
+  /* Shadows */
+  --shadow-card:    0 8px 32px rgba(0, 0, 0, 0.35);
+  --shadow-nav:     0 4px 24px rgba(0, 0, 0, 0.4);
+
+  /* Spacing */
+  --space-xs:  4px;
+  --space-sm:  8px;
+  --space-md:  16px;
+  --space-lg:  24px;
+  --space-xl:  32px;
+  --space-2xl: 48px;
+
+  /* Radius */
+  --radius-sm:  8px;
+  --radius-md:  16px;
+  --radius-lg:  24px;
+  --radius-xl:  32px;
+  --radius-pill: 999px;
+
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Transitions */
+  --transition-fast:   150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow:   400ms ease;
+
+  /* Nav height */
+  --nav-height: 68px;
+}

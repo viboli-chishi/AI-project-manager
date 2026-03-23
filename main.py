@@ -3,12 +3,13 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
-from models import ProjectInit, MeetingLog, TaskUpdateRequest, GenericResponse
+from models import ProjectInit, MeetingLog, TaskUpdateRequest, GenericResponse, DecisionLog
 from memory_client import store_memory, retrieve_memory, retrieve_all_context
 from llm_client import summarize_meeting, recommend_task_assignments, generate_deadline_reminders
 from memory_utils import (
     log_meeting_to_memory,
     log_task_update_to_memory,
+    log_decision_to_memory,
     build_prompt_context,
 )
 import logging
@@ -76,6 +77,18 @@ def update_task(payload: TaskUpdateRequest):
     return GenericResponse(
         message="Task update logged to memory.",
         data={"task": task_dict},
+    )
+
+
+# POST /decision/log — log a key project decision to Hindsight memory
+@app.post("/decision/log", response_model=GenericResponse)
+def log_decision(payload: DecisionLog):
+    store_result = log_decision_to_memory(payload.project_id, payload.decision)
+    if "error" in store_result:
+        raise HTTPException(status_code=500, detail=store_result["error"])
+    return GenericResponse(
+        message="Decision logged to memory.",
+        data={"decision": payload.decision},
     )
 
 

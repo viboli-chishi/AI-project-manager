@@ -1,0 +1,126 @@
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background var(--transition-fast);
+  border-radius: var(--radius-sm);
+}
+
+.row:last-child { border-bottom: none; }
+.row:hover { background: rgba(255,255,255,0.03); }
+
+.left {
+  flex: 1;
+  min-width: 0;
+}
+
+.priority {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 5px;
+}
+
+.high {
+  background: rgba(240, 98, 146, 0.18);
+  color: var(--accent-pink);
+}
+
+.low {
+  background: rgba(160, 160, 192, 0.14);
+  color: var(--text-secondary);
+}
+
+.title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.center {
+  width: 140px;
+  flex-shrink: 0;
+}
+
+.progressWrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.progressTrack {
+  flex: 1;
+  height: 5px;
+  background: rgba(255,255,255,0.08);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  width: 0;
+  background: var(--color);
+  border-radius: var(--radius-pill);
+  animation: grow 0.6s ease forwards;
+  animation-delay: 100ms;
+}
+
+@keyframes grow {
+  from { width: 0; }
+  to   { width: var(--w); }
+}
+
+.progressLabel {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+  width: 30px;
+  text-align: right;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  flex-shrink: 0;
+}
+
+.meta {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.status {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 3px 9px;
+  border-radius: var(--radius-pill);
+}
+
+.in_progress {
+  background: rgba(244, 185, 66, 0.15);
+  color: var(--accent-yellow);
+}
+
+.done {
+  background: rgba(29, 201, 138, 0.15);
+  color: var(--accent-green);
+}
+
+.todo {
+  background: rgba(160, 160, 192, 0.12);
+  color: var(--text-secondary);
+}
