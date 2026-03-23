@@ -1,0 +1,2 @@
+/* Override Vite's default index.css — all real styles are in src/styles/ */
+@import './styles/global.css';

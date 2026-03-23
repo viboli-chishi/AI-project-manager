@@ -43,3 +43,9 @@ class TaskUpdateRequest(BaseModel):
 class GenericResponse(BaseModel):
     message: str
     data: Optional[dict] = None
+
+
+# Represents a project decision logged to memory
+class DecisionLog(BaseModel):
+    project_id: str
+    decision: str
